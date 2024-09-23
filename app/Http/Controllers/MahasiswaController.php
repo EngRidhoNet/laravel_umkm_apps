@@ -76,6 +76,5 @@ class MahasiswaController extends Controller
             'message' => 'Data mahasiswa berhasil dihapus',
             'data' => $mahasiswa
         ], 200);
-
         }
 }
