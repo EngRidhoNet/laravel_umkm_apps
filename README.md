@@ -1,66 +1,414 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# API Documentation
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This document provides details about the API routes available in this application.
 
-## About Laravel
+## Authentication
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Login
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Endpoint:**  
+`POST /login`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Description:**  
+Log in a user with credentials.
 
-## Learning Laravel
+**Request Body:**  
+```json
+{
+    "email": "string",
+    "password": "string"
+}
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Response:**  
+- 200 OK on successful login.
+- 401 Unauthorized on failure.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Register
 
-## Laravel Sponsors
+**Endpoint:**  
+`POST /register`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Description:**  
+Register a new user.
 
-### Premium Partners
+**Request Body:**  
+```json
+{
+    "name": "string",
+    "email": "string",
+    "password": "string",
+    "password_confirmation": "string"
+}
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Response:**  
+- 201 Created on successful registration.
+- 400 Bad Request on failure.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Logout
 
-## Code of Conduct
+**Endpoint:**  
+`POST /logout`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Description:**  
+Logs out the currently authenticated user.
 
-## Security Vulnerabilities
+**Response:**  
+- 200 OK on successful logout.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Mahasiswa
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Create Mahasiswa
+
+**Endpoint:**  
+`POST /mahasiswa`
+
+**Description:**  
+Add a new mahasiswa.
+
+**Request Body:**  
+```json
+{
+    "name": "string",
+    "email": "string",
+    "jurusan": "string"
+}
+```
+
+**Response:**  
+- 201 Created on success.
+
+---
+
+### List Mahasiswa
+
+**Endpoint:**  
+`GET /mahasiswa`
+
+**Description:**  
+Retrieve a list of all mahasiswa.
+
+**Response:**  
+- 200 OK with a list of mahasiswa.
+
+---
+
+### Get Mahasiswa by ID
+
+**Endpoint:**  
+`GET /mahasiswa/{id}`
+
+**Description:**  
+Retrieve details of a specific mahasiswa by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the mahasiswa does not exist.
+
+---
+
+### Update Mahasiswa
+
+**Endpoint:**  
+`PUT /mahasiswa/{id}`
+
+**Description:**  
+Update an existing mahasiswa's details by ID.
+
+**Request Body:**  
+```json
+{
+    "name": "string",
+    "email": "string",
+    "jurusan": "string"
+}
+```
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the mahasiswa does not exist.
+
+---
+
+### Delete Mahasiswa
+
+**Endpoint:**  
+`DELETE /mahasiswa/{id}`
+
+**Description:**  
+Delete a specific mahasiswa by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the mahasiswa does not exist.
+
+---
+
+## Chat
+
+### Create Chat
+
+**Endpoint:**  
+`POST /chat`
+
+**Description:**  
+Send a new chat message.
+
+**Request Body:**  
+```json
+{
+    "sender_id": "integer",
+    "receiver_id": "integer",
+    "message": "string"
+}
+```
+
+**Response:**  
+- 201 Created on success.
+
+---
+
+### List Chats
+
+**Endpoint:**  
+`GET /chat`
+
+**Description:**  
+Retrieve a list of all chats.
+
+**Response:**  
+- 200 OK with a list of chats.
+
+---
+
+### Get Chat by ID
+
+**Endpoint:**  
+`GET /chat/{id}`
+
+**Description:**  
+Retrieve a specific chat by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the chat does not exist.
+
+---
+
+### Update Chat
+
+**Endpoint:**  
+`PUT /chat/{id}`
+
+**Description:**  
+Update a chat message by ID.
+
+**Request Body:**  
+```json
+{
+    "message": "string"
+}
+```
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the chat does not exist.
+
+---
+
+### Delete Chat
+
+**Endpoint:**  
+`DELETE /chat/{id}`
+
+**Description:**  
+Delete a chat message by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the chat does not exist.
+
+---
+
+## Comment
+
+### Create Comment
+
+**Endpoint:**  
+`POST /comment`
+
+**Description:**  
+Add a new comment.
+
+**Request Body:**  
+```json
+{
+    "article_id": "integer",
+    "user_id": "integer",
+    "comment": "string"
+}
+```
+
+**Response:**  
+- 201 Created on success.
+
+---
+
+### List Comments
+
+**Endpoint:**  
+`GET /comment`
+
+**Description:**  
+Retrieve a list of all comments.
+
+**Response:**  
+- 200 OK with a list of comments.
+
+---
+
+### Get Comment by ID
+
+**Endpoint:**  
+`GET /comment/{id}`
+
+**Description:**  
+Retrieve a specific comment by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the comment does not exist.
+
+---
+
+### Update Comment
+
+**Endpoint:**  
+`PUT /comment/{id}`
+
+**Description:**  
+Update a comment by ID.
+
+**Request Body:**  
+```json
+{
+    "comment": "string"
+}
+```
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the comment does not exist.
+
+---
+
+### Delete Comment
+
+**Endpoint:**  
+`DELETE /comment/{id}`
+
+**Description:**  
+Delete a specific comment by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the comment does not exist.
+
+---
+
+## UMKM
+
+### Create UMKM
+
+**Endpoint:**  
+`POST /umkm`
+
+**Description:**  
+Add a new UMKM record.
+
+**Request Body:**  
+```json
+{
+    "name": "string",
+    "owner": "string",
+    "business_type": "string"
+}
+```
+
+**Response:**  
+- 201 Created on success.
+
+---
+
+### List UMKM
+
+**Endpoint:**  
+`GET /umkm`
+
+**Description:**  
+Retrieve a list of all UMKM records.
+
+**Response:**  
+- 200 OK with a list of UMKM.
+
+---
+
+### Get UMKM by ID
+
+**Endpoint:**  
+`GET /umkm/{id}`
+
+**Description:**  
+Retrieve a specific UMKM record by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the UMKM does not exist.
+
+---
+
+### Update UMKM
+
+**Endpoint:**  
+`PUT /umkm/{id}`
+
+**Description:**  
+Update a UMKM record by ID.
+
+**Request Body:**  
+```json
+{
+    "name": "string",
+    "owner": "string",
+    "business_type": "string"
+}
+```
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the UMKM does not exist.
+
+---
+
+### Delete UMKM
+
+**Endpoint:**  
+`DELETE /umkm/{id}`
+
+**Description:**  
+Delete a specific UMKM record by ID.
+
+**Response:**  
+- 200 OK on success.
+- 404 Not Found if the UMKM does not exist.
+
+---
+
+This documentation covers the core routes of the application. For any other routes, check the respective controller or API documentation.
