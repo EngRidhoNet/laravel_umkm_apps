@@ -29,6 +29,8 @@ class AuthController extends Controller
 
     public function postregister(Request $request)
     {
+
+        dd($request);
         // Validasi data dari request
         $data = $request->validate([
             'nama' => 'required',
@@ -48,6 +50,8 @@ class AuthController extends Controller
             'kode_pos' => 'required',
             'alamat' => 'required',
         ]);
+
+
 
         // Enkripsi password
         $data['password'] = Hash::make($data['password']);
