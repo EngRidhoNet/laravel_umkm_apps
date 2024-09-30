@@ -17,3 +17,7 @@ Route::get('/index', function(){
 Route::get('/register', function(){
     return view('auth.register');
 });
+
+// Route::get('/index', function(){
+//     return view('auth.register');
+// });
