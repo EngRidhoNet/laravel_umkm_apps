@@ -26,13 +26,6 @@ Route::get('/index', function(){
 
 Route::get('/register', function(){
     return view('auth.register');
-<<<<<<< HEAD
-});
-
-Route::get('/slide', function(){
-    return view('slide');
-});
-=======
 })->name('register');
 
 
@@ -95,4 +88,3 @@ Route::get('umkm', [UmkmController::class, 'index']);
 Route::get('umkm/{id}', [UmkmController::class, 'show']);
 Route::put('umkm/{id}', [UmkmController::class, 'update']);
 Route::delete('umkm/{id}', [UmkmController::class, 'destroy']);
->>>>>>> 1ec8dc3e3d7447427f49fd82ad4be3cbf38be274
