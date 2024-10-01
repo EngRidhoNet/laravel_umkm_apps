@@ -18,6 +18,6 @@ Route::get('/register', function(){
     return view('auth.register');
 });
 
-// Route::get('/index', function(){
-//     return view('auth.register');
-// });
+Route::get('/slide', function(){
+    return view('slide');
+});
