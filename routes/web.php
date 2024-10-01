@@ -25,7 +25,7 @@ Route::get('/index', function(){
 
 Route::get('/register', function(){
     return view('auth.register');
-});
+})->name('register');
 
 
 Route::post('/login', [AuthController::class, 'login']);
