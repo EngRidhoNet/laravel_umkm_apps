@@ -22,9 +22,14 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    public function register()
+    public function registermahasiswa()
     {
-        return view('register');
+        return view('auth.register');
+    }
+
+    public function registerumkm()
+    {
+        return view('auth.registerumkm');
     }
 
     public function postregister(Request $request)
@@ -50,8 +55,6 @@ class AuthController extends Controller
             'kode_pos' => 'required',
             'alamat' => 'required',
         ]);
-
-
 
         // Enkripsi password
         $data['password'] = Hash::make($data['password']);

@@ -13,17 +13,20 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\SuperAdminController;
 
-Route::middleware(['auth', 'role:umkm'])->group(function () {
-    Route::get('/umkm', [UMKMController::class, 'index'])->name('umkm.dashboard');
-});
+// Route::middleware(['auth', 'role:umkm'])->group(function () {
+//     Route::get('/umkm', [UMKMController::class, 'index'])->name('umkm.dashboard');
+// });
 
-Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
-    Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.dashboard');
-});
+// Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
+//     Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.dashboard');
+// });
 
-Route::middleware(['auth', 'role:superadmin'])->group(function () {
-    Route::get('/superadmin', [SuperAdminController::class, 'index'])->name('superadmin.dashboard');
-});
+// Route::middleware(['auth', 'role:superadmin'])->group(function () {
+//     Route::get('/superadmin', [SuperAdminController::class, 'index'])->name('superadmin.dashboard');
+// });
+// Route::get('/slide', function(){
+//     return view('slide');
+// });
 
 
 
@@ -32,18 +35,18 @@ Route::middleware(['auth', 'role:superadmin'])->group(function () {
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/postlogin', [AuthController::class, 'postlogin']);
 
-Route::get('/slide', function(){
-    return view('slide');
-});
 
 Route::get('/', function(){
     return view('index');
 });
 
-
 Route::get('/register', function(){
     return view('auth.register');
 })->name('register');
+
+Route::get('/registerumkm', function(){
+    return view('auth.registerumkm');
+})->name('registerumkm');
 
 
 Route::post('/login', [AuthController::class, 'login']);
