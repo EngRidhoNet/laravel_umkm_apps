@@ -43,14 +43,12 @@
                         </li>
                         <li><a class="nav-link" href="shop.html">Event</a></li>
                         <li><a class="nav-link" href="about.html">UMKM</a></li>
-                        <!-- <li><a class="nav-link" href="services.html">Services</a></li>
-                        <li><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li><a class="nav-link" href="contact.html">Contact us</a></li> -->
+
                     </ul>
 
                     <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                         <li><a class="nav-link" href="#"><img src="{{asset('images/user.svg')}}"></a></li>
-                        <!-- <li><a class="nav-link" href="cart.html"><img src="{{asset('images/cart.svg')}}"></a></li> -->
+                        <li><a class="btn btn-secondary me-2" href="{{ route('login') }}">Login</a></li>
                     </ul>
                 </div>
             </div>
