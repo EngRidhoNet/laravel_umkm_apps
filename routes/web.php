@@ -36,7 +36,7 @@ Route::get('/slide', function(){
     return view('slide');
 });
 
-Route::get('/index', function(){
+Route::get('/', function(){
     return view('index');
 });
 
