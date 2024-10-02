@@ -17,7 +17,8 @@
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     Buat Akun
                 </h1>
-                <form class="space-y-4" action="#" method="POST">
+                <form class="space-y-4" action="{{ route('postregister') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class=" gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <div class="w-full">
                             <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Panjang</label>
@@ -43,8 +44,8 @@
                             <label for="jenis_kelamin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin</label>
                             <select name="jenis_kelamin" id="jenis_kelamin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                 <option value="">Pilih Jenis Kelamin</option>
-                                <option value="male">Laki-Laki</option>
-                                <option value="female">Perempuan</option>
+                                <option value="L">Laki-Laki</option>
+                                <option value="P">Perempuan</option>
                             </select>
                         </div>
                         <div class="w-full pt-4">

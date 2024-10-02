@@ -34,39 +34,62 @@ class AuthController extends Controller
 
     public function postregister(Request $request)
     {
+        try {
+            // Validasi data dari request
+            $data = $request->validate([
+                'nama' => 'required',
+                'email' => 'required|email',
+                'password' => 'required|min:6',
+                'universitas' => 'required',
+                'tanggal_lahir' => 'required|date',
+                'jenis_kelamin' => 'required',
+                'no_hp' => 'required',
+                'penghasilan' => 'required',
+                'pekerjaan' => 'required',
+                'foto_profil' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'provinsi' => 'required',
+                'kota' => 'required',
+                'kecamatan' => 'required',
+                'kode_pos' => 'required',
+                'alamat' => 'required',
+            ]);
 
-        dd($request);
-        // Validasi data dari request
-        $data = $request->validate([
-            'nama' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-            'universitas' => 'required',
-            'tanggal_lahir' => 'required|date',
-            'jenis_kelamin' => 'required',
-            'no_hp' => 'required',
-            'penghasilan' => 'required',
-            'pekerjaan' => 'required',
-            'foto_profil' => 'required|url',
-            'provinsi' => 'required',
-            'kota' => 'required',
-            'kecamatan' => 'required',
-            'kelurahan' => 'required',
-            'kode_pos' => 'required',
-            'alamat' => 'required',
-        ]);
+            // Enkripsi password
+            $data['password'] = Hash::make($data['password']);
 
-        // Enkripsi password
-        $data['password'] = Hash::make($data['password']);
-        // Buat pengguna baru
-        $user = Mahasiswa::create($data);
-        // Autentikasi pengguna baru
-        Auth::login($user);
-        // Generate token menggunakan Sanctum
-        $token = $user->createToken('auth_token')->plainTextToken;
-        // Kirim respons dengan token
-        return response()->json(['token' => $token], 200);
+            // Ubah nama file foto profil
+            if ($request->hasFile('foto_profil')) {
+                $file = $request->file('foto_profil');
+                $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                // Simpan file di folder public/images
+                $file->move(public_path('images'), $filename);
+                // Simpan nama file di data yang akan disimpan di database
+                $data['foto_profil'] = 'images/' . $filename;
+            }
+
+            // Buat pengguna baru
+            $user = Mahasiswa::create($data);
+
+            // Autentikasi pengguna baru
+            Auth::login($user);
+
+            // Generate token menggunakan Sanctum
+            $token = $user->createToken('auth_token')->plainTextToken;
+
+            // Kirim respons dengan token
+            return response()->json(['token' => $token], 200);
+        } catch (\Exception $e) {
+            // Tampilkan error detail dalam respons
+            return response()->json([
+                'error' => true,
+                'message' => $e->getMessage(),
+                'line' => $e->getLine(),
+                'file' => $e->getFile(),
+                'trace' => $e->getTraceAsString()
+            ], 500);
+        }
     }
+
 
     public function logout()
     {

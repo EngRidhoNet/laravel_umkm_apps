@@ -68,7 +68,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('/postlogin', [AuthController::class, 'postlogin']);
-Route::post('/postregister', [AuthController::class, 'postregister']);
+Route::post('/postregister', [AuthController::class, 'postregister'])->name('postregister');
 
 
 

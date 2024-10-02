@@ -27,7 +27,6 @@ class mahasiswa extends Model implements AuthenticatableContract
         'provinsi',
         'kota',
         'kecamatan',
-        'kelurahan',
         'kode_pos',
         'alamat',
     ];
