@@ -13,16 +13,17 @@ return new class extends Migration
     {
         Schema::create('table_konsultasi', function (Blueprint $table) {
             $table->id();
-            $table->enum('status_aktivitas_bisnis', ['aktif', 'tidak_aktif', 'Belum'])->default('pending');
+            $table->enum('status_aktivitas_bisnis', ['aktif', 'tidak_aktif', 'Belum'])->default('aktif');
             $table->string('nama_pelaku_bisnis');
-            $table->enum('tipe_identitas',['NPWP','NIK','NIB']);
+            $table->enum('tipe_identitas',['NPWP','NIK','NIB'])->default('NIK');
             $table->string('email');
             $table->string('alamat');
             $table->string('provinsi');
             $table->string('kota');
             $table->string('detail_kendala_bisnis');
             $table->string('kendala_bisnis');
-
+            $table->string('kategori_kebutuhan');
+            $table->string('deskripsi_masalah');
             $table->timestamps();
         });
     }
