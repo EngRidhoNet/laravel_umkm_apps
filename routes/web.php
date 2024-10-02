@@ -12,6 +12,21 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\SuperAdminController;
+use Illuminate\Support\Facades\File;
+
+Route::get('/api/provinces', function () {
+    return File::get(public_path('api_daerah/provinces.json'));
+});
+
+Route::get('/api/regencies/{province_id}', function ($province_id) {
+    $data = json_decode(File::get(public_path('api_daerah/regencies.json')), true);
+    return collect($data)->where('province_id', $province_id)->values();
+});
+
+Route::get('/api/districts/{regency_id}', function ($regency_id) {
+    $data = json_decode(File::get(public_path('api_daerah/districts.json')), true);
+    return collect($data)->where('regency_id', $regency_id)->values();
+});
 
 // Route::middleware(['auth', 'role:umkm'])->group(function () {
 //     Route::get('/umkm', [UMKMController::class, 'index'])->name('umkm.dashboard');

@@ -25,5 +25,7 @@ class umkm extends Model
         'kelurahan',
         'kode_pos',
         'alamat',
+        'informasi_pemilik',
+        'informasi_bisnis'
     ];
 }
