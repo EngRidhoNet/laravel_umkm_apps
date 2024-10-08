@@ -44,60 +44,125 @@
 		<!-- End Hero Section -->
 
 		<!-- start of section feature -->
-		<div class=" py-5 my-auto" style="background: linear-gradient(to right, #0DBDE5, #2DB08B">
-			<div class="container py-5 my-auto" style="min-height: 10vh; display: flex; flex-direction: column; justify-content: center;">
-				<div class="row text-center">
-					<div class="col-md-2">
-						<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-							<img src="{{asset('images/umkm.png')}}" class="card-img-top mx-auto" alt="Galeri UMKM" style="width: 50%;">
-							<div class="card-body">
-								<h5 class="card-title" style="font-size: 14px;">Galeri UMKM</h5>
+		<!DOCTYPE html>
+		<html lang="id">
+
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Animasi Kartu</title>
+
+			<style>
+				/* Animasi masuk dari kiri */
+				@keyframes slideInLeft {
+					from {
+						opacity: 0;
+						transform: translateX(-100%);
+					}
+
+					to {
+						opacity: 1;
+						transform: translateX(0);
+					}
+				}
+
+				/* Animasi masuk dari kanan */
+				@keyframes slideInRight {
+					from {
+						opacity: 0;
+						transform: translateX(100%);
+					}
+
+					to {
+						opacity: 1;
+						transform: translateX(0);
+					}
+				}
+
+				/* Menerapkan animasi untuk elemen-elemen tertentu */
+				.animate-from-left {
+					animation: slideInLeft 1s ease-out;
+				}
+
+				.animate-from-right {
+					animation: slideInRight 1s ease-out;
+				}
+
+				/* Opsional: Memberikan jarak antara kartu */
+				.card {
+					margin: 10px;
+				}
+			</style>
+
+		</head>
+
+		<body>
+			<div class="py-5 my-auto" style="background: linear-gradient(to right, #0DBDE5, #2DB08B)">
+				<div class="container py-5 my-auto" style="min-height: 10vh; display: flex; flex-direction: column; justify-content: center;">
+					<div class="row text-center">
+						<!-- Kartu 1: Animasi dari kiri -->
+						<div class="col-md-2 animate-from-left">
+							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
+								<a href="">
+									<img src="{{asset('images/umkm.png')}}" class="card-img-top mx-auto" alt="Galeri UMKM" style="width: 50%;">
+									<div class="card-body">
+										<h5 class="card-title" style="font-size: 14px;">Galeri UMKM</h5>
+									</div>
+								</a>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-							<img src="{{asset('images/konsultasi.png')}}" class="card-img-top mx-auto" alt="Konsultasi UMKM" style="width: 50%;">
-							<div class="card-body">
-								<h5 class="card-title" style="font-size: 14px;">Konsultasi UMKM</h5>
+						<!-- Kartu 2: Animasi dari kanan -->
+						<div class="col-md-2 animate-from-right">
+							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
+								<img src="{{asset('images/konsultasi.png')}}" class="card-img-top mx-auto" alt="Konsultasi UMKM" style="width: 50%;">
+								<div class="card-body">
+									<h5 class="card-title" style="font-size: 14px;">Konsultasi UMKM</h5>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-							<img src="{{asset('images/informasi.png')}}" class="card-img-top mx-auto" alt="Informasi Bisnis" style="width: 50%;">
-							<div class="card-body">
-								<h5 class="card-title" style="font-size: 14px;">Informasi Bisnis</h5>
+						<!-- Kartu 3: Animasi dari kiri -->
+						<div class="col-md-2 animate-from-left">
+							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
+								<img src="{{asset('images/informasi.png')}}" class="card-img-top mx-auto" alt="Informasi Bisnis" style="width: 50%;">
+								<div class="card-body">
+									<h5 class="card-title" style="font-size: 14px;">Informasi Bisnis</h5>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-							<img src="{{asset('images/chat.png')}}" class="card-img-top mx-auto" alt="Chat" style="width: 50%;">
-							<div class="card-body">
-								<h5 class="card-title" style="font-size: 14px;">Chat</h5>
+						<!-- Kartu 4: Animasi dari kanan -->
+						<div class="col-md-2 animate-from-right">
+							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
+								<img src="{{asset('images/chat.png')}}" class="card-img-top mx-auto" alt="Chat" style="width: 50%;">
+								<div class="card-body">
+									<h5 class="card-title" style="font-size: 14px;">Chat</h5>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-							<img src="{{asset('images/blog.png')}}" class="card-img-top mx-auto" alt="Blog" style="width: 50%;">
-							<div class="card-body">
-								<h5 class="card-title" style="font-size: 14px;">Blog</h5>
+						<!-- Kartu 5: Animasi dari kiri -->
+						<div class="col-md-2 animate-from-left">
+							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
+								<img src="{{asset('images/blog.png')}}" class="card-img-top mx-auto" alt="Blog" style="width: 50%;">
+								<div class="card-body">
+									<h5 class="card-title" style="font-size: 14px;">Blog</h5>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-							<img src="{{asset('images/kontak.png')}}" class="card-img-top mx-auto" alt="Contact Us" style="width: 50%;">
-							<div class="card-body">
-								<h5 class="card-title" style="font-size: 14px;">Contact Us</h5>
+						<!-- Kartu 6: Animasi dari kanan -->
+						<div class="col-md-2 animate-from-right">
+							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
+								<img src="{{asset('images/kontak.png')}}" class="card-img-top mx-auto" alt="Contact Us" style="width: 50%;">
+								<div class="card-body">
+									<h5 class="card-title" style="font-size: 14px;">Contact Us</h5>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</body>
+
+		</html>
+
 		<!-- end of section feature -->
 
 		<!-- Start Product Section -->
@@ -107,7 +172,7 @@
 					<div class="row">
 						<!-- Start Column 1 -->
 						<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-							<h2 class="mb-4 section-title">Temukan UMKM Di Sekitar Malang Raya.</h2>
+							<h2 class="mb-4 section-title">Temukan UMKM Di Sekitar Malang Raya</h2>
 							<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
 							<p><a href="shop.html" class="btn">Explore</a></p>
 						</div>
@@ -143,7 +208,7 @@
 						<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 							<a class="product-item" href="cart.html">
 								<img src="{{asset('images/plus.png')}}" class="img-fluid product-thumbnail">
-								<h3 class="product-title">Wildho Marketing Agency</h3>
+								<h3 class="product-title">More</h3>
 								<strong class="product-price"></strong>
 
 								<span class="icon-cross">
@@ -213,8 +278,11 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Blog Section -->	<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+		<!-- End Blog Section -->
+		<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 		<script src="{{asset('js/tiny-slider.js')}}"></script>
 		<script src="{{asset('js/tiny-slider.js')}}"></script>
 		@include('layouts.footer')
-</body></html>
+		</body>
+
+		</html>

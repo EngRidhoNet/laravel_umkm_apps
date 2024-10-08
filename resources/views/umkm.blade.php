@@ -59,7 +59,7 @@
 </head>
 
 <body>
-@include('layout.header')
+@include('layouts.header')
 
     <div class="product-section shadow-lg">
         <div class="container">
@@ -129,5 +129,5 @@
         </div>
     </div>
     
-    @include('layout.footer')
+    @include('layouts.footer')
 </body>

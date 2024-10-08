@@ -13,6 +13,7 @@
 	<!-- Bootstrap CSS -->
 	<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link href="{{asset('css/tiny-slider.css')}}" rel="stylesheet">
 	<link href="{{asset('css/style.css')}}" rel="stylesheet">
 	<title>Post UMKM</title>
@@ -21,6 +22,138 @@
 			min-height: 2px;
 			/* Sesuaikan sesuai kebutuhan */
 		}
+
+		@keyframes slideInLeft {
+			from {
+				opacity: 0;
+				transform: translateX(-100%);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		/* Animasi masuk dari kanan */
+		@keyframes slideInRight {
+			from {
+				opacity: 0;
+				transform: translateX(100%);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		/* Menerapkan animasi untuk elemen-elemen tertentu */
+		.animate-from-left {
+			animation: slideInLeft 1s ease-out;
+		}
+
+		.animate-from-right {
+			animation: slideInRight 1s ease-out;
+		}
+
+		/* Opsional: Memberikan jarak antara kartu */
+		.card {
+			margin: 10px;
+		}
+
+		#chat1 .form-outline .form-control~.form-notch div {
+			pointer-events: none;
+			border: 1px solid;
+			border-color: #eee;
+			box-sizing: border-box;
+			background: transparent;
+		}
+
+		#chat1 .form-outline .form-control~.form-notch .form-notch-leading {
+			left: 0;
+			top: 0;
+			height: 100%;
+			border-right: none;
+			border-radius: .65rem 0 0 .65rem;
+		}
+
+		#chat1 .form-outline .form-control~.form-notch .form-notch-middle {
+			flex: 0 0 auto;
+			max-width: calc(100% - 1rem);
+			height: 100%;
+			border-right: none;
+			border-left: none;
+		}
+
+		#chat1 .form-outline .form-control~.form-notch .form-notch-trailing {
+			flex-grow: 1;
+			height: 100%;
+			border-left: none;
+			border-radius: 0 .65rem .65rem 0;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-notch .form-notch-leading {
+			border-top: 0.125rem solid #39c0ed;
+			border-bottom: 0.125rem solid #39c0ed;
+			border-left: 0.125rem solid #39c0ed;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-notch .form-notch-leading,
+		#chat1 .form-outline .form-control.active~.form-notch .form-notch-leading {
+			border-right: none;
+			transition: all 0.2s linear;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-notch .form-notch-middle {
+			border-bottom: 0.125rem solid;
+			border-color: #39c0ed;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-notch .form-notch-middle,
+		#chat1 .form-outline .form-control.active~.form-notch .form-notch-middle {
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			transition: all 0.2s linear;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-notch .form-notch-trailing {
+			border-top: 0.125rem solid #39c0ed;
+			border-bottom: 0.125rem solid #39c0ed;
+			border-right: 0.125rem solid #39c0ed;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-notch .form-notch-trailing,
+		#chat1 .form-outline .form-control.active~.form-notch .form-notch-trailing {
+			border-left: none;
+			transition: all 0.2s linear;
+		}
+
+		#chat1 .form-outline .form-control:focus~.form-label {
+			color: #39c0ed;
+		}
+
+		#chat1 .form-outline .form-control~.form-label {
+			color: #bfbfbf;
+		}
+
+		#chat3 .form-control {
+			border-color: transparent;
+		}
+
+		#chat3 .form-control:focus {
+			border-color: transparent;
+			box-shadow: inset 0px 0px 0px 1px transparent;
+		}
+
+		.badge-dot {
+			border-radius: 50%;
+			height: 10px;
+			width: 10px;
+			margin-left: 2.9rem;
+			margin-top: -.75rem;
+		}	
 	</style>
 </head>
 
@@ -42,10 +175,11 @@
 			<div class="collapse navbar-collapse" id="navbarsFurni">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Beranda</a>
+						<a class="nav-link" href="{{url('/')}}">Beranda</a>
 					</li>
-					<li><a class="nav-link" href="shop.html">Event</a></li>
+					<li><a class="nav-link" href="{{url('/event')}}">Event</a></li>
 					<li><a class="nav-link" href="about.html">UMKM</a></li>
+					<li><a class="nav-link" href="about.html">KonsultasiUMKM</a></li>
 
 				</ul>
 

@@ -55,6 +55,22 @@ Route::get('/', function(){
     return view('index');
 });
 
+Route::get('/pesan', function(){
+    return view('pesan');
+});
+
+Route::get('/blog', function(){
+    return view('blog');
+});
+
+Route::get('/event', function(){
+    return view('event');
+});
+
+Route::get('/umkm', function(){
+    return view('umkm');
+});
+
 Route::get('/register', function(){
     return view('auth.register');
 })->name('register');

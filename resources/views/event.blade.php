@@ -26,7 +26,7 @@
 </head>
 
 <body>
-@include('layout.header')
+@include('layouts.header')
 
 
         <!-- Main Post Section Start -->
@@ -189,7 +189,7 @@
 	<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 	<script src="{{asset('js/tiny-slider.js')}}"></script>
 	<script src="{{asset('js/tiny-slider.js')}}"></script>
-	@include('layout.footer')
+	@include('layouts.footer')
 </body>
 
 
