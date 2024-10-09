@@ -55,8 +55,8 @@ Route::get('/', function(){
     return view('index');
 });
 
-Route::get('/pesan', function(){
-    return view('pesan');
+Route::get('/chat', function(){
+    return view('layouts.chat');
 });
 
 Route::get('/blog', function(){
@@ -65,11 +65,11 @@ Route::get('/blog', function(){
 
 Route::get('/event', function(){
     return view('event');
-});
+})->name('event');
 
 Route::get('/umkm', function(){
     return view('umkm');
-});
+})->name('umkm');
 
 Route::get('/register', function(){
     return view('auth.register');

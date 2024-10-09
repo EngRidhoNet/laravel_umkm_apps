@@ -160,7 +160,7 @@
 <body>
 
 	<!-- Start Header/Navigation -->
-	<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-biru-gelap shadow-lg" arial-label="Furni navigation bar" style="background: linear-gradient(to right, #0DBDE5, #2DB08B)">
+	<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-biru-gelap shadow-lg " arial-label="Furni navigation bar" style="background: linear-gradient(to right, #0DBDE5, #2DB08B)">
 
 		<div class="container">
 			<a class="navbar-brand" href="index.html">
@@ -177,9 +177,9 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="{{url('/')}}">Beranda</a>
 					</li>
-					<li><a class="nav-link" href="{{url('/event')}}">Event</a></li>
-					<li><a class="nav-link" href="about.html">UMKM</a></li>
-					<li><a class="nav-link" href="about.html">KonsultasiUMKM</a></li>
+					<li><a class="nav-link" href="{{url('/event')}}">Blog</a></li>
+					<li><a class="nav-link" href="{{url('/umkm')}}">UMKM</a></li>
+					
 
 				</ul>
 

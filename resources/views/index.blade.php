@@ -1,13 +1,13 @@
 	<!-- Start Hero Section -->@include('layouts.header')
 	<div class="shadow-lg">
-		<div class="hero shadow-lg" style="">
+		<div class="hero shadow-lg " style="padding:8 0 0 0">
 			<div class="container ">
 				<div class="row justify-content-between">
 					<div class="col-lg-5">
 						<div class="intro-excerpt">
 							<h1 style="color:black">Pos<span clsas="d-block" style="color: black"> UMKM</span></h1>
 							<p class="mb-4" style="color: black;">Pos UMKM adalah Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aspernatur asperiores modi delectus. Commodi harum vitae facilis nulla ullam ipsa molestiae possimus consectetur, dolorem eius. Minus quisquam eius repudiandae dolore.</p>
-							<p><a href="" class="btn btn-secondary me-2">Apply Lowongan</a><a href="#" class="btn btn-grey-outline" style="color: white">Berita</a></p>
+							<p><a href="" class="btn btn-secondary me-2">Apply Project</a><a href="{{route('event')}}" class="btn btn-grey-outline" style="color: white">Berita</a></p>
 						</div>
 					</div>
 					<div class="col-lg-7">
@@ -103,12 +103,12 @@
 						<!-- Kartu 1: Animasi dari kiri -->
 						<div class="col-md-2 animate-from-left">
 							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
-								<a href="">
+								<div href="{{route('umkm')}}">
 									<img src="{{asset('images/umkm.png')}}" class="card-img-top mx-auto" alt="Galeri UMKM" style="width: 50%;">
 									<div class="card-body">
-										<h5 class="card-title" style="font-size: 14px;">Galeri UMKM</h5>
+										<h5 class="card-title" style="font-size: 14px;">UMKM</h5>
 									</div>
-								</a>
+								</div>
 							</div>
 						</div>
 						<!-- Kartu 2: Animasi dari kanan -->
@@ -116,7 +116,7 @@
 							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
 								<img src="{{asset('images/konsultasi.png')}}" class="card-img-top mx-auto" alt="Konsultasi UMKM" style="width: 50%;">
 								<div class="card-body">
-									<h5 class="card-title" style="font-size: 14px;">Konsultasi UMKM</h5>
+									<h5 class="card-title" style="font-size: 14px;">Kategori</h5>
 								</div>
 							</div>
 						</div>
@@ -125,7 +125,7 @@
 							<div class="card shadow-sm p-3 mb-5 bg-white rounded-lg" style="height: 150px; border-radius: 10px;">
 								<img src="{{asset('images/informasi.png')}}" class="card-img-top mx-auto" alt="Informasi Bisnis" style="width: 50%;">
 								<div class="card-body">
-									<h5 class="card-title" style="font-size: 14px;">Informasi Bisnis</h5>
+									<h5 class="card-title" style="font-size: 14px;">Semua Lowongan</h5>
 								</div>
 							</div>
 						</div>
@@ -172,7 +172,7 @@
 					<div class="row">
 						<!-- Start Column 1 -->
 						<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-							<h2 class="mb-4 section-title">Temukan UMKM Di Sekitar Malang Raya</h2>
+							<h2 class="mb-4 section-title">Temukan Project UMKM Di Sekitar Malang Raya</h2>
 							<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. </p>
 							<p><a href="shop.html" class="btn">Explore</a></p>
 						</div>
@@ -182,8 +182,8 @@
 						<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 							<a class="product-item" href="cart.html">
 								<img src="{{asset('images/logosme.jpg')}}" class="img-fluid product-thumbnail">
-								<h3 class="product-title">Wildho Marketing Agency</h3>
-								<strong class="product-price"></strong>
+								<h3 class="product-title">Marketing skills and video editing</h3>
+								<strong class="product-price">Wildho Marketing Agency</strong>
 
 								<span class="icon-cross">
 									<img src="{{asset('images/logosme.jpg')}}" class="img-fluid">
