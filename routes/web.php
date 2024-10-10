@@ -63,6 +63,14 @@ Route::get('/blog', function(){
     return view('blog');
 });
 
+Route::get('/profile-mahasiswa', function(){
+    return view('profile-mahasiswa');
+});
+
+Route::get('/kategori-post', function(){
+    return view('kategori-post');
+});
+
 Route::get('/kategori', function(){
     return view('kategori');
 });
