@@ -63,6 +63,10 @@ Route::get('/blog', function(){
     return view('blog');
 });
 
+Route::get('/kategori', function(){
+    return view('kategori');
+});
+
 Route::get('/blog-post', function(){
     return view('blog-post');
 })->name('blog-post');
